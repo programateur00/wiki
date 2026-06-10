@@ -1,0 +1,9 @@
+<h2>Search Results</h2>
+
+<ul>
+    {% for entry in results %}
+        <li>
+            <a href="{% url 'entry' entry %}">{{ entry }}</a>
+        </li>
+    {% endfor %}
+</ul>
