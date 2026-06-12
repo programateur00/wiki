@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django import forms
 import markdown2
 import random
@@ -54,7 +55,7 @@ def create(request):
                 "error": "An entry with this title already exists."
             })
         util.save_entry(title, content)
-        return redirect(reverse("entry", args=[title]))
+        return redirect(reverse("index"))
     return render(request, "encyclopedia/create.html")
 
 
